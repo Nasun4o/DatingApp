@@ -27,10 +27,12 @@ model : any = {};
   }
 
   loggedIn() {
+    console.log("LoggedIn",this.authService.loggedIn());
     return this.authService.loggedIn();
   }
 
   logout() {
+    console.log("User logged out");
     localStorage.removeItem('token');
     this.alertify.message('Logged out');
     this.router.navigate(['/home']);
