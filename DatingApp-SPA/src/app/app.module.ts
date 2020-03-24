@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery'
 import { FileUploadModule } from 'ng2-file-upload';
+// import {TimeAgoPipe} from 'time-ago-pipe';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -61,6 +63,7 @@ export function tokenGetter() {
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
+      TimeagoModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
