@@ -8,7 +8,10 @@
 /* ===========
  tabs component
 =========== */
-
+.ngx-gallery {
+  display: inline-block !important;
+  margin-bottom: 20px !important;
+}
 .tab-panel {
     border: 1px solid #ddd;
     padding: 10px;
