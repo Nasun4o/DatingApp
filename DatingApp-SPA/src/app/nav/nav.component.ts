@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-model : any = {};
-photoUrl: any;
+model: any = {};
+photoUrl: string;
 
   constructor(
     public authService: AuthService, 
@@ -26,11 +26,9 @@ photoUrl: any;
     this.authService.login(this.model).subscribe(
       next => {
       this.alertify.success('Logged in successfully');
-    }, 
-    error => {
+    }, error => {
       this.alertify.error(error);
-    }, 
-    () => {
+    },() => {
       this.router.navigate(['/members']);
     });
   }

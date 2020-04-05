@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace DatingApp.API.Controllers
 {
     [ServiceFilter(typeof(LogUserActivity))]
-    [Authorize]
     [Route("api/users/{userId}/[controller]")]
     [ApiController]
     public class MessagesController : ControllerBase
@@ -80,7 +79,7 @@ namespace DatingApp.API.Controllers
         public async Task<IActionResult> CreateMessage(int userId,
         MessageForCreationDto messageForCreation)
         {
-            var sender = await _repo.GetUser(userId);
+            var sender = await _repo.GetUser(userId, false);
 
             if (sender.Id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
             {
@@ -88,7 +87,7 @@ namespace DatingApp.API.Controllers
             }
             messageForCreation.SenderId = userId;
 
-            var recipient = await _repo.GetUser(messageForCreation.RecipientId);
+            var recipient = await _repo.GetUser(messageForCreation.RecipientId, true);
 
             if (recipient == null)
             {
