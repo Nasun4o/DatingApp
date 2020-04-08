@@ -1,1 +1,8 @@
 DatingApp.API/datingapp.db-wal
+*.suo
+.vscode
+bin
+obj
+*.db
+appsettings.json
+wwwroot
