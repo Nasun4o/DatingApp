@@ -42,13 +42,7 @@
             "request": "launch",
             "name": "Launch Chrome agains localhost",
             "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}/src/main.ts"
+            "webRoot": "${workspaceFolder}/DatingApp-SPA"
         }
-        // {
-        //     "name": "Launch index.html",
-        //     "type": "chrome",
-        //     "request": "launch",
-        //     "file": "${workspaceFolder}/index.html"
-        // },
     ]
 }
